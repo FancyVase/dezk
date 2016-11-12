@@ -14,6 +14,21 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+module.exports = app;
+
+// database setup
+var mongoose = require('mongoose')
+mongoose.Promise = global.Promise;
+
+// connect to the local database
+mongoose.connect('mongodb://localhost/dezkdb')
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+	console.log('database connected')
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -30,4 +45,3 @@ app.use(function(err, req, res, next) {
   });
 });
 
-module.exports = app;
