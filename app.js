@@ -6,15 +6,14 @@
  */
 
 var express = require('express');
-
 var bodyParser = require('body-parser');
+var routes = require('./routes/index')
 
 var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-module.exports = app;
+app.use('/', routes);
 
 // database setup
 var mongoose = require('mongoose')
@@ -44,4 +43,8 @@ app.use(function(err, req, res, next) {
     'error': err.message
   });
 });
+
+module.exports = app;
+
+
 
