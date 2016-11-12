@@ -9,9 +9,7 @@ var router = express.Router();
 var User = require('../models/user.js');
 
 router.get('/', function(req, res) {
-	res.json({
-		'content': 'req successful'
-	});
+	res.sendFile('../public/index.html');;
 })
 
 module.exports = router;

@@ -4,8 +4,6 @@
  */
 
 var mongoose = require('mongoose');
-var ObjectId = mongoose.Types.ObjectId;
-var Note = require('./note.js');
 
 var UserSchema = mongoose.Schema({
 	username: {
@@ -16,10 +14,7 @@ var UserSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	notes: [{
-        type: ObjectId,
-        ref: Note
-    }]
+	notes: [{ title: String, content: String }]
 });
 
 module.exports = mongoose.model('User', UserSchema);
