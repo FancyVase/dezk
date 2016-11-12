@@ -14,7 +14,7 @@ var UserSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	notes: [{ title: String, content: String }]
+	notes: [{ content: String }]
 });
 
 module.exports = mongoose.model('User', UserSchema);
