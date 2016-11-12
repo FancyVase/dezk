@@ -1,0 +1,24 @@
+{
+  "name": "dezk",
+  "version": "1.0.0",
+  "description": "An app to track where self-study progress.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FancyVase/dezk.git"
+  },
+  "author": "Jierui Fang, Shannon Peng, Hiram Moncivais",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FancyVase/dezk/issues"
+  },
+  "homepage": "https://github.com/FancyVase/dezk#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "debug": "^2.3.2",
+    "express": "^4.14.0"
+  }
+}
